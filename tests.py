@@ -3,9 +3,9 @@ from xUnit import WasRun, TestCase
 class TestCaseTest(TestCase):
 
     def testTemplateMethod(self):
-        self.test = WasRun("testMethod")
-        self.test.run()
-        assert self.test.wasRun
+        test = WasRun("testMethod")
+        test.run()
+        assert "setUp testMethod tearDown " == test.log
 
 TestCaseTest("testTemplateMethod").run()
 

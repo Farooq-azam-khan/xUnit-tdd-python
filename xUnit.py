@@ -3,10 +3,15 @@ class TestCase:
     def __init__(self, name):
         self.name = name
 
-    def run(self):
+    def run(self):#, result):
+        #result.testStarted()
         self.setUp()
         method = getattr(self, self.name)
         method()
+        self.tearDown()
+
+    def tearDown(self):
+        pass 
 
     def setUp(self):
         pass
@@ -14,16 +19,16 @@ class TestCase:
 
 class WasRun(TestCase):
     def __init__(self, name):
-        self.wasRun = None 
-        self.wasSetUp = 1
         TestCase.__init__(self, name) 
 
     def testMethod(self):
         self.wasRun = 1
-        self.log = self.log + "testMethod "
+        self.log += "testMethod "
 
     def setUp(self):
-        self.wasRun = None
         self.log = "setUp "
+
+    def tearDown(self):
+        self.log += "tearDown "
 
 
