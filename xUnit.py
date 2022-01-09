@@ -14,7 +14,7 @@ class TestCase:
 
 class WasRun(TestCase):
     def __init__(self, name):
-        self.wasRun = None # should'nt it be False initinally
+        self.wasRun = None 
         self.wasSetUp = 1
         TestCase.__init__(self, name) 
 
