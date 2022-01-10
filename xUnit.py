@@ -49,7 +49,7 @@ class TestResult:
         self.runCount = self.runCount+ 1
 
     def summary(self):
-        return f"{self.runCount} run, 0 failed"
+        return f"{self.runCount} run, {self.errorCount} failed"
 
 class WasRun(TestCase):
     def __init__(self, name):
